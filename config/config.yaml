@@ -1,0 +1,55 @@
+# Interview Agent Configuration
+
+# LLM Configuration
+llm:
+  provider: "groq"  # Options: groq, openai, anthropic
+  model: "llama-3.3-70b-versatile"  # Updated to supported model
+  temperature: 0.7
+  max_tokens: 2048
+
+# Interview Settings
+interview:
+  max_questions: 15
+  min_questions: 5
+  question_types:
+    - technical
+    - behavioral
+    - situational
+    - experience_based
+  difficulty_levels:
+    junior: [0, 2]  # years of experience
+    mid: [2, 5]
+    senior: [5, 10]
+    lead: [10, 100]
+
+# Resume Parsing
+resume:
+  supported_formats:
+    - pdf
+    - docx
+    - txt
+  max_file_size_mb: 10
+
+# LinkedIn Scraping
+linkedin:
+  timeout: 30
+  retry_attempts: 3
+  rate_limit_delay: 2  # seconds
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  log_file: "logs/interview_agent.log"
+  max_bytes: 10485760  # 10MB
+  backup_count: 5
+
+# Output
+output:
+  save_interviews: true
+  output_dir: "data/interviews"
+  format: "json"  # json, csv
+
+# API Keys (use environment variables)
+api_keys:
+  groq_api_key: "${GROQ_API_KEY}"
+  openai_api_key: "${OPENAI_API_KEY}"

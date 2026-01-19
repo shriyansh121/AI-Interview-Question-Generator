@@ -3,7 +3,6 @@ import os
 current_dir = os.getcwd()
 
 structure = [
-    '.env',
     'requirements.txt',
     'config',
     'config/__init__.py',
@@ -17,7 +16,6 @@ structure = [
     'src/parsers',
     'src/parsers/__init__.py',
     'src/parsers/resume_parser.py',
-    'src/parsers/linked_parser.py',
     'src/generators',
     'src/generators/__init__.py',
     'src/generators/question_generator.py',
@@ -28,8 +26,10 @@ structure = [
     'main.py',
     'test.py',
     'setup.sh',
+    'setup.py',
     'QUICKSTART.md',
-    'ARCHITECTURE.md'
+    'ARCHITECTURE.md',
+    'logs'
 ]
 
 for i in structure:
